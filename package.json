@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.21",
+    "zustand": "^5.0.14"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2
+  }
+}
