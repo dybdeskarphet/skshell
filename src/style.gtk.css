@@ -1,0 +1,17 @@
+window {
+  background: transparent;
+}
+
+.island-hotspot {
+  min-width: 260px;
+  min-height: 4px;
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.island-popup {
+  background-color: @background;
+  transition: all 200ms ease;
+  padding: 3px;
+  border: 0px;
+  border-radius: 5px;
+}

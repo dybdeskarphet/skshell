@@ -1,4 +1,11 @@
 {
+  "name": "skshell",
+  "type": "module",
+  "scripts": {
+    "dev": "find src -type f | entr -r -s 'GSK_RENDERER=gl ags run src/app.ts'",
+    "inspect": "GTK_DEBUG=interactive ags run src/app.ts",
+    "bundle": "ags bundle src/app.ts dist/skshell"
+  },
   "dependencies": {
     "dayjs": "^1.11.21",
     "zustand": "^5.0.14"
