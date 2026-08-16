@@ -2,6 +2,8 @@ window {
   background: transparent;
 }
 
+/* Main */
+
 .island-hotspot {
   min-width: 260px;
   min-height: 4px;
@@ -10,8 +12,31 @@ window {
 
 .island-popup {
   background-color: @background;
-  transition: all 200ms ease;
   padding: 3px;
   border: 0px;
   border-radius: 5px;
+}
+
+/* Module */
+
+.module-icon {
+  font-family: "monospace_alt_font";
+  font-size: 12px;
+  color: @primary;
+}
+
+.module-text {
+  font-family: "proportional_font";
+  font-size: 12px;
+  font-weight: bold;
+  color: @on_surface;
+  margin-left: 4px;
+}
+
+/* Small fixes */
+
+revealer {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
