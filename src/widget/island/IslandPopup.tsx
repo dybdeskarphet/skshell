@@ -3,6 +3,7 @@ import { IslandContext } from "../../store/islandContext";
 import Astal from "gi://Astal?version=4.0";
 import Gtk from "gi://Gtk?version=4.0";
 import { Module } from "../templates/Module";
+import { Battery } from "../modules/Battery";
 
 export const IslandPopup = (gdkmonitor: Gdk.Monitor) => {
   const { islandOpen, keepOpen, scheduleClose, closeImmediately } =
@@ -30,7 +31,9 @@ export const IslandPopup = (gdkmonitor: Gdk.Monitor) => {
         transition_type={Gtk.RevealerTransitionType.FADE_SLIDE_DOWN}
         transition_duration={250}
       >
-        <box css_classes={["island-popup"]} halign={Gtk.Align.CENTER}></box>
+        <box css_classes={["island-popup"]} halign={Gtk.Align.CENTER}>
+          <Battery />
+        </box>
       </revealer>
     </window>
   );
