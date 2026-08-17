@@ -1,7 +1,8 @@
 import AstalBattery from "gi://AstalBattery?version=0.1";
 import { createBinding, createComputed } from "gnim";
-import { Module } from "../templates/Module";
+import { Module } from "../templates/core/Module";
 import Json from "gi://Json?version=1.0";
+import { IslandContext } from "../../store/islandContext";
 
 const getBatteryIcon = (percent: number, charging: boolean): string => {
   if (charging) {
@@ -32,6 +33,7 @@ const getBatteryIcon = (percent: number, charging: boolean): string => {
 };
 
 export const Battery = () => {
+  const { toggleMenu } = IslandContext.use();
   const battery = AstalBattery.get_default();
 
   const percentage = createBinding(battery, "percentage");
@@ -42,5 +44,14 @@ export const Battery = () => {
     return getBatteryIcon(percentage(), charging());
   });
 
-  return <Module icon={icon} text={text} showOnHover={true} />;
+  return (
+    <Module
+      icon={icon}
+      text={text}
+      showOnHover={true}
+      onClicked={(posX) => {
+        toggleMenu("battery", posX);
+      }}
+    />
+  );
 };
