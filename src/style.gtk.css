@@ -12,10 +12,12 @@ window {
 
 .island-popup {
   background-color: @background;
-  padding: 3px;
+  padding: 5px;
   border: 0px;
   border-radius: 5px;
 }
+
+/* Write a .clickable for hover animaiton */
 
 /* Module */
 
@@ -31,6 +33,47 @@ window {
   font-weight: bold;
   color: @on_surface;
   margin-left: 4px;
+}
+
+.clickable-module {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clickable-module:hover {
+  background-color: @surface_container_highest;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* Menu */
+
+.menu {
+  background-color: @background;
+  min-width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.menu-title {
+  font-family: "proportional_font";
+  font-size: 16px;
+  color: @primary;
+  font-weight: 700;
+}
+
+.menu-icon {
+  font-family: "monospace_alt_font";
+  font-size: 16px;
+  margin-right: 9px;
+  color: @primary;
+}
+
+.menu-separator {
+  min-height: 1px;
+  background-color: @outline_variant;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* Small fixes */
