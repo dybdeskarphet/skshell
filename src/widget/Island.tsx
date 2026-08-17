@@ -7,9 +7,10 @@ import {
 import { Hotspot } from "./island/Hotspot";
 import { IslandPopup } from "./island/IslandPopup";
 import { exit } from "system";
+import { BatteryMenu } from "./menus/BatteryMenu";
 
 export const Island = (gdkmonitor: Gdk.Monitor) => {
-  const islandState = createIslandState();
+  const islandState = createIslandState(gdkmonitor);
 
   return (
     <IslandContext value={islandState}>
@@ -17,6 +18,7 @@ export const Island = (gdkmonitor: Gdk.Monitor) => {
         <>
           {Hotspot(gdkmonitor)}
           {IslandPopup(gdkmonitor)}
+          {BatteryMenu()}
         </>
       )}
     </IslandContext>

@@ -2,7 +2,7 @@ import Gdk from "gi://Gdk?version=4.0";
 import { IslandContext } from "../../store/islandContext";
 import Astal from "gi://Astal?version=4.0";
 import Gtk from "gi://Gtk?version=4.0";
-import { Module } from "../templates/Module";
+import { Module } from "../templates/core/Module";
 import { Battery } from "../modules/Battery";
 
 export const IslandPopup = (gdkmonitor: Gdk.Monitor) => {
@@ -32,6 +32,15 @@ export const IslandPopup = (gdkmonitor: Gdk.Monitor) => {
         transition_duration={250}
       >
         <box css_classes={["island-popup"]} halign={Gtk.Align.CENTER}>
+          <Battery />
+          <Battery />
+          <Battery />
+          <Battery />
+          <Battery />
+          <Battery />
+          <Battery />
+          <Battery />
+          <Battery />
           <Battery />
         </box>
       </revealer>
