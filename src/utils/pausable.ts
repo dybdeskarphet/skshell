@@ -32,24 +32,3 @@ export const createPausableBinding = <
 
   return state;
 };
-
-export const createPausableInterval = (
-  callback: () => void,
-  intervalMs: number,
-  isActive: Accessor<boolean>,
-  immediate: boolean = true,
-) => {
-  createRoot(() => {
-    createEffect(() => {
-      if (!isActive()) return;
-
-      if (immediate) callback();
-
-      const id = setInterval(callback, intervalMs);
-
-      return () => {
-        clearInterval(id);
-      };
-    });
-  });
-};
