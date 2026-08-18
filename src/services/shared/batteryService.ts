@@ -38,7 +38,9 @@ export class BatteryService {
   private display = AstalBattery.get_default();
   private upower = new AstalBattery.UPower();
 
-  public mainDevice = this.upower.devices.find((d) => d.isBattery);
+  public mainDevice = this.upower.devices.find(
+    (d) => d.is_battery && d.power_supply,
+  );
 
   public percentage = createBinding(this.display, "percentage");
   public charging = createBinding(this.display, "charging");
@@ -56,13 +58,13 @@ export class BatteryService {
   );
   public voltageText = this.voltage.as((v) => `${v.toFixed()} V`);
 
-  public temperature = createPausableBinding(
+  public capacity = createPausableBinding(
     this.mainDevice,
-    "temperature",
+    "capacity",
     isAnyIslandOpen,
     0,
   );
-  public temperatureText = this.temperature.as((t) => `${t.toFixed(1)} 󰔄`);
+  public capacityText = this.capacity.as((c) => `${(c * 100).toFixed(2)}%`);
 
   public static get_default() {
     return (this.instance ??= new BatteryService());
