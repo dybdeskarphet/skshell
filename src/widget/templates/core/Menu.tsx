@@ -22,13 +22,11 @@ export const Menu = ({
 }: MenuProps) => {
   const {
     gdkmonitor,
-    setActiveMenu,
     activeMenu,
     keepOpen,
     keepMenuOpen,
     scheduleMenuClose,
     scheduleClose,
-    closeImmediately,
     menuPosX,
   } = IslandContext.use();
 
