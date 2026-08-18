@@ -35,7 +35,10 @@ export const Module = ({
           transition_type={Gtk.RevealerTransitionType.SLIDE_RIGHT}
           transition_duration={200}
         >
-          <label label={text} css_classes={["module-text"]} />
+          <box>
+            {icon && <box width_request={3} />}
+            <label label={text} css_classes={["module-text"]} />
+          </box>
         </revealer>
       )}
     </box>

@@ -32,7 +32,6 @@ window {
   font-size: 12px;
   font-weight: bold;
   color: @on_surface;
-  margin-left: 4px;
 }
 
 .clickable-module {
