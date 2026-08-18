@@ -4,6 +4,7 @@ import colors from "./colors.gtk.css";
 import { Island } from "./widget/Island";
 import Adw from "gi://Adw?version=1";
 import { createRoot } from "gnim";
+import { activeIslandStates } from "./store/islandRegistry";
 
 Adw.StyleManager.get_default().set_color_scheme(Adw.ColorScheme.FORCE_DARK);
 
@@ -23,5 +24,15 @@ app.start({
         }
       });
     });
+  },
+  requestHandler(argv: string[], res: (response: any) => void) {
+    const command = argv[0];
+
+    if (command === "open") {
+      activeIslandStates.forEach((island) => island.keepOpen());
+      return res("Opened");
+    }
+
+    return res("Unknown command");
   },
 });

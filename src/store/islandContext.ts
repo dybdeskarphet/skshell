@@ -1,6 +1,6 @@
 import { createContext, createState } from "ags";
 import Gdk from "gi://Gdk?version=4.0";
-import { setGlobalIslandOpen } from "./islandRegistry";
+import { activeIslandStates, setGlobalIslandOpen } from "./islandRegistry";
 
 export const createIslandState = (gdkmonitor: Gdk.Monitor) => {
   const [islandOpen, setIslandOpen] = createState(false);
@@ -30,7 +30,7 @@ export const createIslandState = (gdkmonitor: Gdk.Monitor) => {
     }, delayMs);
   };
 
-  const closeImmediately = () => {
+  const destoryImmediately = () => {
     if (closeTimer) {
       clearTimeout(closeTimer);
       closeTimer = null;
@@ -44,10 +44,11 @@ export const createIslandState = (gdkmonitor: Gdk.Monitor) => {
     setIslandOpen(false);
     setGlobalIslandOpen(outputName, false);
     setActiveMenu(null);
+    activeIslandStates.delete(outputName);
   };
 
   const toggle = () => {
-    islandOpen.peek() ? closeImmediately() : keepOpen();
+    islandOpen.peek() ? destoryImmediately() : keepOpen();
   };
 
   const toggleMenu = (name: string, posX: number) => {
@@ -78,7 +79,7 @@ export const createIslandState = (gdkmonitor: Gdk.Monitor) => {
     setIslandOpen,
     keepOpen,
     scheduleClose,
-    closeImmediately,
+    closeImmediately: destoryImmediately,
     toggle,
     toggleMenu,
     activeMenu,

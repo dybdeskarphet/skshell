@@ -1,4 +1,7 @@
 import { createComputed, createState } from "gnim";
+import { IslandState } from "./islandContext";
+
+export const activeIslandStates = new Map<string, IslandState>();
 
 const [openMonitors, setOpenMointors] = createState<Set<string>>(new Set());
 

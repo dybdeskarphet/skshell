@@ -8,9 +8,11 @@ import { Hotspot } from "./island/Hotspot";
 import { IslandPopup } from "./island/IslandPopup";
 import { exit } from "system";
 import { BatteryMenu } from "./menus/BatteryMenu";
+import { activeIslandStates } from "../store/islandRegistry";
 
 export const Island = (gdkmonitor: Gdk.Monitor) => {
   const islandState = createIslandState(gdkmonitor);
+  activeIslandStates.set(gdkmonitor.get_connector() ?? "default", islandState);
 
   return (
     <IslandContext value={islandState}>
