@@ -1,7 +1,7 @@
 import { createComputed } from "gnim";
-import { IslandContext } from "../../store/islandContext";
 import Astal from "gi://Astal?version=4.0";
 import Gtk from "gi://Gtk?version=4.0";
+import { IslandContext } from "../../../store/islandContext";
 
 interface MenuProps {
   name: string;

@@ -1,7 +1,7 @@
 import Gtk from "gi://Gtk?version=4.0";
 import { Accessor, createState } from "gnim";
-import { IslandContext } from "../../store/islandContext";
 import Gdk from "gi://Gdk?version=4.0";
+import { IslandContext } from "../../../store/islandContext";
 
 interface ModuleProps {
   icon?: string | Accessor<string>;
