@@ -1,5 +1,11 @@
 import GObject from "gi://GObject?version=2.0";
-import { Accessor, createEffect, createRoot, createState } from "gnim";
+import {
+  Accessor,
+  createEffect,
+  createExternal,
+  createRoot,
+  createState,
+} from "gnim";
 
 export const createPausableBinding = <
   T extends GObject.Object,
@@ -31,4 +37,18 @@ export const createPausableBinding = <
   });
 
   return state;
+};
+
+export const createPoll = <T>(
+  init: T,
+  intervalMs: number,
+  fn: () => T,
+): Accessor<T> => {
+  return createExternal(init, (set) => {
+    set(fn());
+
+    const id = setInterval(() => set(fn()), intervalMs);
+
+    return () => clearInterval(id);
+  });
 };
