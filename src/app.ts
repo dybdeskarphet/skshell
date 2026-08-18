@@ -29,7 +29,10 @@ app.start({
     const command = argv[0];
 
     if (command === "open") {
-      activeIslandStates.forEach((island) => island.keepOpen());
+      activeIslandStates.forEach((island) => {
+        island.keepOpen();
+        island.scheduleClose(5000);
+      });
       return res("Opened");
     }
 
