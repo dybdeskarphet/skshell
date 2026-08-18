@@ -38,13 +38,13 @@ export const createIslandState = (gdkmonitor: Gdk.Monitor) => {
   };
 
   const toggle = () => {
-    islandOpen.get() ? closeImmediately() : keepOpen();
+    islandOpen.peek() ? closeImmediately() : keepOpen();
   };
 
   const toggleMenu = (name: string, posX: number) => {
     keepOpen();
     if (posX !== undefined) setMenuPosX(posX);
-    setActiveMenu(activeMenu.get() === name ? null : name);
+    setActiveMenu(activeMenu.peek() === name ? null : name);
   };
 
   const scheduleMenuClose = (delayMs: number = 2000) => {
