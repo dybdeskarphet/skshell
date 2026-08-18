@@ -50,30 +50,51 @@ window {
 
 .menu {
   background-color: @background;
-  min-width: 150px;
+  min-width: 200px;
+  max-width: 500px;
   padding: 10px;
   border-radius: 5px;
 }
 
 .menu-title {
   font-family: "proportional_font";
-  font-size: 16px;
+  font-size: 13px;
   color: @primary;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .menu-icon {
   font-family: "monospace_alt_font";
-  font-size: 16px;
-  margin-right: 9px;
+  font-size: 13px;
+  margin-right: 7px;
   color: @primary;
 }
 
 .menu-separator {
   min-height: 1px;
   background-color: @outline_variant;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.menu-bullet-icon {
+  font-family: "monospace_alt_font";
+  font-size: 16px;
+  margin-right: 5px;
+  color: @primary;
+  min-width: 16px;
+}
+
+.menu-bullet-title {
+  font-family: "proportional_font";
+  font-size: 13px;
+  color: @on_surface;
+}
+
+.menu-bullet-value {
+  font-family: "proportional_font";
+  font-size: 13px;
+  color: @primary_fixed_dim;
 }
 
 /* Small fixes */
