@@ -31,7 +31,16 @@ export const createIslandState = (gdkmonitor: Gdk.Monitor) => {
   };
 
   const closeImmediately = () => {
-    if (closeTimer) clearTimeout(closeTimer);
+    if (closeTimer) {
+      clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+
+    if (closeMenuTimer) {
+      clearTimeout(closeMenuTimer);
+      closeMenuTimer = null;
+    }
+
     setIslandOpen(false);
     setGlobalIslandOpen(outputName, false);
     setActiveMenu(null);
