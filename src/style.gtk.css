@@ -17,8 +17,6 @@ window {
   border-radius: 5px;
 }
 
-/* Write a .clickable for hover animaiton */
-
 /* Module */
 
 .module-icon {
@@ -69,12 +67,47 @@ window {
   color: @primary;
 }
 
+/* Menu big label */
+
+.menu-big-label {
+  padding: 14px 0px;
+}
+
+.menu-big-label-background {
+  background-color: @surface_container_high;
+  border-radius: 5px;
+}
+
+.menu-big-label-icon {
+  font-family: "monospace_alt_font";
+  font-size: 26px;
+  color: @primary;
+}
+
+.menu-big-label-label {
+  font-family: "proportional_font";
+  font-size: 26px;
+  font-weight: 800;
+  color: @on_surface;
+}
+
+.menu-big-label-footer {
+  font-family: "proportional_font";
+  font-size: 11px;
+  color: @primary_fixed_dim;
+}
+
+
+/* Menu seperator */
+
 .menu-separator {
   min-height: 1px;
   background-color: @outline_variant;
   margin-top: 6px;
   margin-bottom: 8px;
 }
+
+/* Menu bullet */
 
 .menu-bullet-icon {
   font-family: "monospace_alt_font";
