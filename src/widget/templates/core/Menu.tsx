@@ -81,6 +81,7 @@ export const Menu = ({
           <box
             orientation={Gtk.Orientation.VERTICAL}
             halign={Gtk.Align.FILL}
+            spacing={6}
             css_classes={["menu-body"]}
           >
             {children}
