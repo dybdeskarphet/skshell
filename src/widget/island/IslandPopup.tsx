@@ -32,9 +32,13 @@ export const IslandPopup = (gdkmonitor: Gdk.Monitor) => {
         transition_type={Gtk.RevealerTransitionType.FADE_SLIDE_DOWN}
         transition_duration={250}
       >
-        <box css_classes={["island-popup"]} halign={Gtk.Align.CENTER}>
-          <Clock />
+        <box
+          spacing={5}
+          css_classes={["island-popup"]}
+          halign={Gtk.Align.CENTER}
+        >
           <Battery />
+          <Clock />
         </box>
       </revealer>
     </window>
