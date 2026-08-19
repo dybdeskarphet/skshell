@@ -10,12 +10,8 @@ interface MenuBulletProps {
 
 export const MenuBullet = ({ icon, label, value }: MenuBulletProps) => {
   return (
-    <box
-      hexpand={true}
-      orientation={Gtk.Orientation.HORIZONTAL}
-      css_classes={["menu-bullet"]}
-    >
-      <box halign={Gtk.Align.START} css_classes={["menu-bullet-title"]}>
+    <box orientation={Gtk.Orientation.HORIZONTAL} css_classes={["menu-bullet"]}>
+      <box css_classes={["menu-bullet-title"]}>
         <label css_classes={["menu-bullet-icon"]} label={icon} />
         <label css_classes={["menu-bullet-label"]} label={label} />
       </box>
