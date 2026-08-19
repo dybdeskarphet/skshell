@@ -8,8 +8,9 @@ export class ClockService {
     return GLib.DateTime.new_now_local();
   });
 
-  public time = this.now.as((t) => t.format("%H:%M") ?? "");
-  public timeWithSeconds = this.now.as((t) => t.format("%H:%M:%S") ?? "");
+  public time = this.now.as((t) => t.format("%H:%M") ?? "...");
+  public timeWithSeconds = this.now.as((t) => t.format("%H:%M:%S") ?? "...");
+  public date = this.now.as((t) => t.format("%F") ?? "...");
 
   public static get_default() {
     return (this.instance ??= new ClockService());
