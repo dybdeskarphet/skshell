@@ -1,10 +1,11 @@
 import Gtk from "gi://Gtk?version=4.0";
 import { Accessor } from "gnim";
+import { MaybeAccessor } from "../../../types";
 
 interface MenuBulletProps {
   icon: string;
   label: string;
-  value: string | Accessor<string>;
+  value: MaybeAccessor<string>;
 }
 
 export const MenuBullet = ({ icon, label, value }: MenuBulletProps) => {

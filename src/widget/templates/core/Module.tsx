@@ -2,10 +2,11 @@ import Gtk from "gi://Gtk?version=4.0";
 import { Accessor, createState } from "gnim";
 import Gdk from "gi://Gdk?version=4.0";
 import { IslandContext } from "../../../store/islandContext";
+import { MaybeAccessor } from "../../../types";
 
 interface ModuleProps {
-  icon?: string | Accessor<string>;
-  text?: string | Accessor<string>;
+  icon?: MaybeAccessor<string>;
+  text?: MaybeAccessor<string>;
   showOnHover?: boolean;
   onClicked?: (posX: number) => void;
   cssClasses?: string[];
